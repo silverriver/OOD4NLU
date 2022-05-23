@@ -63,6 +63,7 @@ try:
     logger.info("found checkpoint {}".format(ckpt_file))
 
     word2id, id2word = utils.read_vocab(word_vocab_file, logger, config['word_vocab_size'])
+    config['word_vocab_size'] = min(config['word_vocab_size'], len(word2id)) 
     intent2id, id2intent = utils.read_vocab(intent_vocab_file, logger)
     config = utils.update_vocab_size(config, intent2id, dict())
 

@@ -117,6 +117,7 @@ try:
                         exit(1)
                 logger.info('Loading vocab files {}'.format(check_list))
                 word2id, id2word = utils.read_vocab(check_list['word_vocab'], logger, limit=config['word_vocab_size'])
+                config['word_vocab_size'] = min(config['word_vocab_size'], len(word2id))
                 intent2id, id2intent = utils.read_vocab(check_list['intent_vocab'], logger)
                 config = utils.update_vocab_size(config, intent2id, dict())
 
@@ -136,6 +137,7 @@ try:
 
                 logger.info('Loading vocab files')
                 word2id, id2word = utils.read_vocab(check_list['word_vocab'], logger, limit=config['word_vocab_size'])
+                config['word_vocab_size'] = min(config['word_vocab_size'], len(word2id))
                 intent2id, id2intent = utils.read_vocab(check_list['intent_vocab'], logger)
                 config = utils.update_vocab_size(config, intent2id, dict())
                 embed = utils.load_embed(word2id, config['word_vocab_size'], config['word_embed_size'],

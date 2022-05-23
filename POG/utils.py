@@ -147,7 +147,7 @@ def load_embed(word2index, char_vocab_size, embed_size, pretrained_embed_file, l
         return None
 
     logger.info("Loading word vectors...")
-    embed = [np.zeros(embed_size, dtype=np.float32) for _ in range(char_vocab_size)]
+    embed = [np.zeros(embed_size, dtype=np.float32) for _ in range(min(len(word2index), char_vocab_size))]
     count = 0
     with open(pretrained_embed_file) as f:
         for i, line in enumerate(f):
