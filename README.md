@@ -174,3 +174,5 @@ Similar results for this simple baseline are reported in various papers, includi
 - [Evaluating the Practical Utility of Confidence-score based Techniques for Unsupervised Open-world Classification, ACL2022](https://aclanthology.org/2022.insights-1.3/), see Table2
 
 The performance of this simplest baseline reported in most above papers can reach an AUROC score of about 93.0, much higher than the results reported by Marek et al.
+
+More detailed disscussions can be found in this [paper](https://arxiv.org/abs/2205.11887).
